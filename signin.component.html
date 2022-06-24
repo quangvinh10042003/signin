@@ -1,0 +1,41 @@
+<form [formGroup]="formAccount" (ngSubmit)="onSubmit()">
+    <h1 class="text-center">Sign In</h1>
+    <div class="formGroup falseSignIn row d-none" id="falseSignIn">
+        <i class="fa-solid fa-circle-exclamation"></i>
+        <p>Your account was not found. Please check your email or password</p>
+    </div>
+    <div class="formGroup">
+        <label>Email Address</label>
+        <input type="text" formControlName="email" id="email" [(ngModel)]="emailInp">
+        <div *ngIf="form.email.invalid && (form.email.dirty || form.email.touched)" required>
+            <div *ngIf="form.email.errors?.['required']">
+                <span class="text-danger font-italic errorSpan">*Please enter a email</span>
+            </div>
+            <div *ngIf="form.email.errors?.['pattern']">
+                <span class="text-danger font-italic errorSpan">*Please enter a valid email address</span>
+            </div>
+        </div>
+    </div>
+    <div class="formGroup">
+        <label class="labelPass">Password</label>
+        <div class="divPassword position-relative">
+            <input type="password" formControlName="password" id="password" (keyup)="showEye()" [(ngModel)]="passwordInp">
+            <div class="showText d-none" id="showText" (click)="showPass()">
+                <i class="fa-solid fa-eye" id="eye"></i>
+            </div>
+        </div>
+        <div *ngIf="form.password.invalid && (form.password.dirty || form.password.touched)" required>
+            <div *ngIf="form.password.errors?.['required']">
+                <span class="text-danger font-italic errorSpan">*Please enter a password</span>
+            </div>
+            <div *ngIf="!form.email.errors?.['minLenght']">
+                <span class="text-danger font-italic errorSpan">*Please enter a valid password</span>
+            </div>
+        </div>
+    </div>
+    <div class="formGroup">
+        <button type="submit" class="btn btn-primary submitBut" [disabled]="form.email.invalid || form.password.invalid">SIGN IN</button>
+        <span class="text-center or">OR</span>
+        <button type="button" class="btn btn-light signupBut" routerLink="/signup">CREATE ACCOUNT</button>
+    </div>
+</form>

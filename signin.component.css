@@ -1,0 +1,107 @@
+form {
+    width: 320px;
+    margin: auto;
+    padding: 10px;
+    padding-top: 40px;
+    padding-bottom: 144px;
+}
+
+h1 {
+    padding: 0;
+    margin: 0;
+    padding-top: 60px;
+    margin-bottom: 30px;
+}
+
+input {
+    width: 100%;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 20px;
+    background-color: #eaeaea;
+}
+
+.formGroup {
+    margin-bottom: 15px;
+}
+
+label {
+    margin-left: 15px;
+    font-weight: 500;
+}
+
+.errorSpan {
+    padding: 0px 15px;
+}
+
+.submitBut {
+    margin-top: 20px;
+}
+
+.submitBut,
+.signupBut {
+    width: 100%;
+    border-radius: 20px;
+}
+
+.signupBut {
+    background-color: #fff;
+    color: black;
+    border: 2px solid black;
+}
+
+.signupBut:hover {
+    background-color: black;
+    color: #fff;
+}
+
+.or {
+    display: block;
+    margin: 20px auto;
+    color: rgb(181, 181, 181);
+    display: flex;
+    align-items: center;
+}
+
+.or::before,
+.or::after {
+    content: "";
+    display: inline-block;
+    width: 40%;
+    height: 1px;
+    margin: 0 8px;
+    background-color: rgb(208, 208, 208);
+}
+
+.showText {
+    position: absolute;
+    top: 7px;
+    right: 13px;
+}
+
+.falseSignIn {
+    margin-left: 0px;
+    width: 300px;
+    padding: 15px;
+    background-color: rgb(248, 241, 226);
+    border: 2px solid red;
+}
+
+.falseSignIn i {
+    color: red;
+    line-height: 25px;
+    font-size: 20px;
+}
+
+.falseSignIn p {
+    display: inline-block;
+    width: 220px;
+    margin-left: 10px;
+    font-weight: 500;
+}
+
+@media screen and (max-width: 1024px) {
+    form {
+        padding-bottom: 0;
+    }
+}
